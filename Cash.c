@@ -2,7 +2,7 @@
 /* Dado un monto en centavos, determina la cantidad mínima de monedas que debes dar como cambio */
 
 //Prototipos
-int get_interger(char* imprimir); //Entrada de solo enteros.
+int get_integer(char* imprimir); //Entrada de solo enteros.
 int CambioMinimo(int Centavos, int *dir1, int *dir2, int *dir3, int *dir4); //
 
 
@@ -24,7 +24,7 @@ int main(void)
     {
     
         printf("Rango de cambio debido: números enteros positivos (no 0)\n");
-        Centavos = get_interger("Cambio debido en centavos: ");
+        Centavos = get_integer("Cambio debido en centavos: ");
             
         if (Centavos <= 0)
         {
@@ -43,7 +43,7 @@ int main(void)
 
 
 //Funciones
-int get_interger(char* imprimir){
+int get_integer(char* imprimir){
     //Esta funcion lee hasta la ultima entrada valida.
     int num = 0;
     int Verif = 0;
