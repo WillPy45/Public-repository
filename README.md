@@ -1,2 +1,3 @@
 - Cash.c: only download Cash.c and compile using the cmd: gcc Cash.c -o Cash.exe
 - Triangle.c: download Triangle.c, mylib.c and mylib.h, later, you compile using the cmd: gcc Triangle.c mylib.c -o Triangle.exe 
+- MiniScrabble.c: only download MiniScrabble.c and compile.
