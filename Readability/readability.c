@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "mylib.h"
 
+/*--- First compile using the command: gcc readability.c mylib.c -o readability.exe --- */
 
 // Colleman-Liau Index
 float CLI(char text[])
@@ -22,14 +23,14 @@ float CLI(char text[])
             letters++;
         }
 
-        // words couting
+        // words counting
         if (text[j] == ' ' && text[j + 1] != ' ')
         {
             words++;
         }
 
-        // sentences couting
-        /*  For this problem, any period, exclamation points, or question mark indicates a sentence. 
+        // sentences counting
+        /*  For this counting, any period, exclamation points, or question mark indicates a sentence. 
         Except dots that have letters on their right side, for example: U.S. RR.HH.*/
 
         if (text[j+1] == ' '){
@@ -78,6 +79,4 @@ int main()
     else{
         printf("Grade %i\n", rounded_CLI);
     }
-
-
 }
