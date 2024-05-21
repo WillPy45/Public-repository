@@ -64,10 +64,10 @@ float CLI(char text[])
 int main()
 {
     // Input of text
-    char text[10];
+    char text[1000000];
    
     printf("Text: ");
-    scanf("%9s", text);
+    scanf("%999999s", text);
     // Limpieza de bufer
     while (getchar() != '\n');
 
