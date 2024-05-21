@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "mylib.h"
 
 /*--- First compile using the command: gcc readability.c mylib.c -o readability.exe --- */
@@ -67,10 +68,7 @@ int main()
     char text[1000000];
    
     printf("Text: ");
-    scanf("%999999s", text);
-    // Limpieza de bufer
-    while (getchar() != '\n');
-
+    fgets(text, 1000000, stdin);
    
     // Output
     printf("CLI: %f\n", CLI(text));
