@@ -20,12 +20,3 @@ int get_integer(char* imprimir){
     return num;
 }
 
-void get_strings(char* output, char re_text[]) //get_string(Texto que desea como salida para el usuario | array donde guardarás el string)
-{
-    int j=0;
-    printf("%s", output);
-    while ((re_text[j] = getchar()) != '\n')
-    {
-        j++;
-    }
-}
