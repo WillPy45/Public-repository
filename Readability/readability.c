@@ -72,7 +72,7 @@ int main()
     while (getchar() != '\n');
 
    
-    // Ouput
+    // Output
     printf("CLI: %f\n", CLI(text));
     int rounded_CLI = round(CLI(text));
     if (rounded_CLI < 1){
