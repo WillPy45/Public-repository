@@ -64,9 +64,14 @@ float CLI(char text[])
 int main()
 {
     // Input of text
-    char text[1000000];
-    get_strings("Text: ", text);
+    char text[10];
+   
+    printf("Text: ");
+    scanf("%9s", text);
+    // Limpieza de bufer
+    while (getchar() != '\n');
 
+   
     // Ouput
     printf("CLI: %f\n", CLI(text));
     int rounded_CLI = round(CLI(text));
