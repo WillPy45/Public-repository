@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*--- First compile using the command: gcc readability.c mylib.c -o readability.exe --- */
+/*--- First compile using the command: gcc readability.c -o readability.exe --- */
 
 // Colleman-Liau Index
 float CLI(char text[])
