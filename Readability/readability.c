@@ -1,7 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include "mylib.h"
+#include <stdlib.h>
 
 /*--- First compile using the command: gcc readability.c mylib.c -o readability.exe --- */
 
