@@ -5,7 +5,6 @@
 int get_integer(char* imprimir); //Entrada de solo enteros.
 int CambioMinimo(int Centavos, int *dir1, int *dir2, int *dir3, int *dir4); //
 
-
 //Programa
 int main(void)
 {
