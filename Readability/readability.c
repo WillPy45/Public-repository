@@ -11,7 +11,7 @@ float CLI(char text[]);
 int main()
 {
     // Input of text
-    int TAM = 1999999;
+    int TAM = 1000000;
     char text[TAM];
     get_stringss("Text: ", text, TAM);
 
