@@ -57,3 +57,4 @@ void get_stringss(char *imprimir, char STRING[], int sizeSTR)
         }
     }while (desb == 1);
 }
+
