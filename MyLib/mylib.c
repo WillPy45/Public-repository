@@ -1,7 +1,8 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "mylib.h"
+
 int get_integer(char* imprimir){
     
     int num = 0;
@@ -20,7 +21,6 @@ int get_integer(char* imprimir){
     } while (Verif == 0);
     return num;
 }
-
 
 void get_stringss(char *imprimir, char STRING[], int sizeSTR)
 {// args: STRING A IMPRIMIR | STRING A MANIPULAR | TAMAÑO DEL ARRAY
@@ -44,11 +44,15 @@ void get_stringss(char *imprimir, char STRING[], int sizeSTR)
             printf("CUIDADO! EL BUFER SE HA DESBORDADO, SE PROCEDERÁ A LA LIMPIEZA DE LOS "
                    "CARACTERES EXCEDENTES.\n MAX_CARACTERES: %i - 1 (NULL CHARACTER). \n --- RECUERDA QUE ENTER TAMBIEN ES UN CARACTER---\n",
                    sizeSTR);
+            printf("\nCAUTION! THE BUFFER HAS OVERFLOWED, THEY WILL BE CLEANED"
+            "SURPLUS CHARACTERS.\n MAX_CHARACTERS: %i - 1 (NULL CHARACTER). \n --- REMEMBER THAT ENTER IS ALSO A CHARACTER---\n", sizeSTR);
+            printf("\nCaracteres excedidos / Exceeded character: ");
             do
             {
                 temp = getchar();
-                printf("\nBasura: %c (%i)\n", temp, temp);
+                printf("%c (%i) | ", temp, temp);
             }while (temp != '\0' && temp != '\n');
+            printf("\n");
         }
     }while (desb == 1);
 }
