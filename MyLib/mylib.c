@@ -37,6 +37,7 @@ void get_stringss(char *imprimir, char STRING[], int sizeSTR)
             if (STRING[j] == '\n')
             {
                 desb = 0;
+                STRING[j] = '\0';
             }
         }
         if (desb == 1)
