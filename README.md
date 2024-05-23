@@ -2,3 +2,4 @@
 - Triangle: download Triangle.c, mylib.c and mylib.h, later, you compile using the cmd: gcc Triangle.c mylib.c -o Triangle.exe 
 - MiniScrabble: only download MiniScrabble.c and compile.
 - Readability: download readability.c and mylib.c and mylib.h and compile using the cmd: gcc readability.c mylib.c-o readability.exe
+- MyLib: Some functions I have created to make some things easier.
