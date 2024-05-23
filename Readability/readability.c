@@ -3,15 +3,10 @@
 #include <stdlib.h>
 #include "mylib.h"
 
-/*--- First compile using the command: gcc readability.c -o readability.exe --- */
+/*--- First compile using the command: gcc readability.c mylib.c -o readability.exe --- */
 
 // Colleman-Liau Index
 float CLI(char text[]);
-
-// Get string function, handles overflow case
-void get_stringss(char *imprimir, char STRING[], int sizeSTR);
-
-
 
 int main()
 {
