@@ -1,10 +1,43 @@
 #include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>
+#include "mylib.h"
 
 /*--- First compile using the command: gcc readability.c -o readability.exe --- */
 
 // Colleman-Liau Index
+float CLI(char text[]);
+
+// Get string function, handles overflow case
+void get_stringss(char *imprimir, char STRING[], int sizeSTR);
+
+
+
+int main()
+{
+    // Input of text
+    int TAM = 1999999;
+    char text[TAM];
+    get_stringss("Text: ", text, TAM);
+
+    // Output
+    printf("O: %s\n", text);
+    printf("CLI: %f\n", CLI(text));
+    int rounded_CLI = round(CLI(text));
+    if (rounded_CLI < 1){
+        printf("Before Grade 1\n");
+    }
+    else if (rounded_CLI > 16){
+        printf("Grade 16+\n");
+    }
+    else{
+        printf("Grade %i\n", rounded_CLI);
+    }
+}
+
+/*PROTOTYPES*/
+/*-------------------------------------*/
+
 float CLI(char text[])
 {
     /*Colleman-Liau Index ---> https://en.wikipedia.org/wiki/Coleman%E2%80%93Liau_index
@@ -30,7 +63,7 @@ float CLI(char text[])
         }
 
         // sentences counting
-        /*  For this counting, any period, exclamation points, or question mark indicates a sentence. 
+        /*  For this counting, any period, exclamation points, or question mark indicates a sentence.
         Except dots that have letters on their right side, for example: U.S. RR.HH.*/
 
         if (text[j+1] == ' '){
@@ -59,26 +92,3 @@ float CLI(char text[])
     f_CLI = 0.0588 * L - 0.296 * S - 15.8;
 
     return f_CLI;
-}
-
-int main()
-{
-    // Input of text
-    char text[1000000];
-   
-    printf("Text: ");
-    fgets(text, 1000000, stdin);
-   
-    // Output
-    printf("CLI: %f\n", CLI(text));
-    int rounded_CLI = round(CLI(text));
-    if (rounded_CLI < 1){
-        printf("Before Grade 1\n");
-    }
-    else if (rounded_CLI > 16){
-        printf("Grade 16+\n");
-    }
-    else{
-        printf("Grade %i\n", rounded_CLI);
-    }
-}
