@@ -13,6 +13,7 @@ int main()
     // Input of text
     int TAM = 1000000;
     char text[TAM];
+    printf("ONLY ENGLISH ALPHABET (a-Z)\n");
     get_stringss("Text: ", text, TAM);
 
     // Output
