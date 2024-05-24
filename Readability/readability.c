@@ -29,6 +29,7 @@ int main()
     else{
         printf("Grade %i\n", rounded_CLI);
     }
+    system("pause");
 }
 
 /*PROTOTYPES*/
