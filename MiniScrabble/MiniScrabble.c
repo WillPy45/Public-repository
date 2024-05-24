@@ -47,6 +47,9 @@ int main()
     {
         printf("Tie!\n");
     }
+    
+    system("pause");
+    return 0;
 }
 
 //FUNCIONES

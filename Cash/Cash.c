@@ -37,6 +37,7 @@ int main(void)
 
     // [Salida] Monedas necesarias y distribución de denominaciones de monedas
     printf("Monedas necesarias: %i\nDistribución: (%d x 25c | %d x 10c | %d x 5c | %d x 1c)\n", MonedasNecesarias, C25, C10, C5, C1);
+    system("pause");
     return 0;
 }
 
