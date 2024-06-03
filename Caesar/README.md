@@ -3,7 +3,7 @@
 This program cipher the text.
 
 - How works?
-Moving the words n steps depending the key.
+Move the words n steps depending the key.
 
 - How I can prove this?
 You only need download all files of Caesar, a compiler and compile. Finally, run executing the cmd ./caesar with a key (positive interger numbers).
