@@ -12,6 +12,5 @@ Steps (Assuming that we use GCC and the Terminal).
 - gcc caesar.c mylib.c -o caesar.exe
 - ./caesar.exe key  (ex: ./caesar.exe 3)
 
-https://imgur.com/a/AKBQnZw
-https://github.com/WillPy45/Public-repository/blob/main/Caesar/ExampleCaesar.PNG
+
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Caesar/ExampleCaesar.PNG)
