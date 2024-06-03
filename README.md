@@ -1,15 +1,6 @@
 I use Visual Studio Code and GCC compiler.
 
-- Cash.
-How compile?
-Only download Cash.c and compile using the cmd: gcc Cash.c -o Cash.exe
-
-How run?
-Use the cmd ./Cash.exe
-
-Overview: This program solve a little problem... How much coins you need to change?
-
-
+- Cash: Only download Cash.c and compile using the cmd: gcc Cash.c -o Cash.exe
 - Triangle: download Triangle.c, mylib.c and mylib.h, later, you compile using the cmd: gcc Triangle.c mylib.c -o Triangle.exe 
 - MiniScrabble: only download MiniScrabble.c and compile.
 - Readability: download readability.c, mylib.c and mylib.h and compile using the cmd: gcc readability.c mylib.c-o readability.exe
