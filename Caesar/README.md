@@ -12,6 +12,6 @@ Steps (Assuming that we use GCC and the Terminal).
 - gcc caesar.c mylib.c -o caesar.exe
 - ./caesar.exe key  (ex: ./caesar.exe 3)
 
-[img]https://imgur.com/a/AKBQnZw[/img]
+https://imgur.com/a/AKBQnZw
 
 
