@@ -3,18 +3,18 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-// Make sure you install all the libraries 
+// Make sure you install all the libraries
 /*
-Compile cmd: gcc runoff.c -lcs50 -o runoff.exe 
+Compile cmd: gcc runoff.c -lcs50 -o runoff.exe
 Command Line Argument (how run): ./runoff.exe Candidate1 Candidate2 Candidate3 Candidate...
 Example: ./runoff.exe Ana Juana Steve
 */
 /*
-How does the program work? In this program you must open it with the CLI (Command Line Argument) 
+How does the program work? In this program you must open it with the CLI (Command Line Argument)
 with the following format: ./runoff.exe CandidateName1 CandidateName2 ...
 
-In the "runoff" system, the winner is the one with +50% of votes. If there is no candidate with a 
-majority, the candidate with the fewest votes is eliminated  and his or her ballot is used in 
+In the "runoff" system, the winner is the one with +50% of votes. If there is no candidate with a
+majority, the candidate with the fewest votes is eliminated  and his or her ballot is used in
 search of second place preference. Then it's back to the second round.
 
 If exist 3 ballots and 3 candidates, we can represent as
@@ -22,7 +22,8 @@ If exist 3 ballots and 3 candidates, we can represent as
 2| [Juana] | [Juana] | [Juana] | [Steve] | [Ana]
 3| [Steve] | [Ana]   | [Ana]   | [Juana] | [Steve]
 
-In this case, Ana is the winner because in the first round Juana is eliminated and in the second round...
+In this case, Ana is the winner because in the first round Juana is eliminated and in the second
+round...
 ... Juanas vote became Ana vote because Anas was the second preference
 */
 // Max voters and candidates
@@ -54,7 +55,7 @@ bool print_winner(void);
 int find_min(void);
 bool is_tie(int min);
 void eliminate(int min);
-
+bool Already_Voted(string CandidateName, int voter, int ActualRank);
 int main(int argc, string argv[])
 {
     // Check for invalid usage
@@ -150,19 +151,25 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
+
     for (int j = 0; j < candidate_count; j++)
     {
         if (strcmp(candidates[j].name, name) == 0)
         {
+            if (Already_Voted(name, voter, rank)){
+                printf("Repeated vote.\n");
+                return false; // Then invalid vote
+            }
             preferences[voter][rank] = j;
             return true;
         }
     }
+    printf("Invalid name.\n");
     return false;
 }
 
 // Tabulate votes for non-eliminated candidates
-void tabulate(void) // PENDIENTE
+void tabulate(void)
 {
     // preferences[voter][rank]
     int AuxIndex = 0; // candidate index
@@ -208,7 +215,7 @@ bool print_winner(void)
     }
     if (WINNERS == 1)
     {
-        printf("%s\n", candidates[IndexWinner].name); 
+        printf("%s\n", candidates[IndexWinner].name);
         return true; // Print winner
     }
     else
@@ -270,5 +277,22 @@ void eliminate(int min)
         }
     }
     return;
+}
 
+bool Already_Voted(string CandidateName, int voter, int ActualRank)
+{
+    int index;
+    if (ActualRank > 0)
+    {
+        for (int rank = 0; rank < ActualRank; rank++)
+        {
+            index = preferences[voter][rank];
+            if (strcmp(CandidateName, candidates[index].name) == 0)
+            {
+                // already exist
+                return true;
+            }
+        }
+    }
+    return false;
 }
