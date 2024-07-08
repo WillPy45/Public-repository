@@ -10,7 +10,8 @@ Command Line Argument (how run): ./runoff.exe Candidate1 Candidate2 Candidate3 C
 Example: ./runoff.exe Ana Juana Steve
 */
 /*
-How does the program work? In this program you must open it with the CLI (Command Line Argument) 
+How does the program work? 
+In this program you must open it with the CLI (Command Line Argument) 
 with the following format: ./runoff.exe CandidateName1 CandidateName2 ...
 
 In the "runoff" system, the winner is the one with +50% of votes. If there is no candidate with a 
@@ -54,7 +55,7 @@ bool print_winner(void);
 int find_min(void);
 bool is_tie(int min);
 void eliminate(int min);
-
+bool Already_Voted(string CandidateName, int voter);
 int main(int argc, string argv[])
 {
     // Check for invalid usage
@@ -150,19 +151,26 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
+    
     for (int j = 0; j < candidate_count; j++)
     {
         if (strcmp(candidates[j].name, name) == 0)
         {
-            preferences[voter][rank] = j;
+            //preferences[voter][rank] = j;
+            if (Already_Voted(name, voter)){
+                printf("Repeat true \n");
+            }else{ 
+                printf("Repeat false \n");
+            }
             return true;
+            preferences[voter][rank] = j;
         }
     }
     return false;
 }
 
 // Tabulate votes for non-eliminated candidates
-void tabulate(void) // PENDIENTE
+void tabulate(void)
 {
     // preferences[voter][rank]
     int AuxIndex = 0; // candidate index
@@ -271,4 +279,19 @@ void eliminate(int min)
     }
     return;
 
+}
+
+bool Already_Voted(string CandidateName, int voter){
+    bool copy;
+    int index;
+    for (int rank = 0; rank < candidate_count; rank++)
+    {
+        index = preferences[voter][rank];
+        if (strcmp(CandidateName, candidates[index].name ) == 0){
+            //already exist
+            return true;
+        }
+    }
+    return false;
+    
 }
