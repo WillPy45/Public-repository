@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
-#include <stdlib>
+#include <stdlib.h>
 /*En el juego de Scrabble, los jugadores crean palabras para ganar puntos, y el número de puntos ... 
 es la suma de los valores de puntos de cada letra de la palabra.
 Por ejemplo, si quisiéramos puntuar la palabra "CODE", notaríamos que la 'C' vale 3 puntos, la 'O' vale 1 punto, ... 
@@ -48,8 +48,6 @@ int main()
     {
         printf("Tie!\n");
     }
-    
-    system("pause");
     return 0;
 }
 
