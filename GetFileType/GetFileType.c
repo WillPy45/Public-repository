@@ -195,8 +195,8 @@ char* getFileType(FILE *ptrFile){
 
     }else if(isPNG(ptrFile)){
         return "png";
-    }else if(isBMPx24(ptrFile){
-        return "bmpx24"
+    }else if(isBMPx24(ptrFile)){
+        return "bmpx24";
     }else{
         return "unclassified file";
     }
