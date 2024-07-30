@@ -9,8 +9,12 @@
 /*Modulos de getFileType, pueden usarse de manera independiente teniendo salida booleana.
  Útil cuando solo quieres saber si X archivo es el tipo especificado (pdf, png, ods, etc)*/
 bool isPDF(FILE *ptrFile); 
-bool isPNG(FILE *ptrFile); 
+bool isPNG(FILE *ptrFile);
 
+//Archivo de imágenes .bmp
+bool isBMPx24(FILE *ptrFile);
+int BMPSize(FILE *ptrFile);
+//
 //GetOffice Type. 
 bool isOfficeFile(FILE *ptrFile);
 char* GetOfficeType(FILE *ptrFile);
@@ -58,6 +62,55 @@ bool isPDF(FILE *ptrFile){
     }
     return true;
 }
+
+//Archivo .bmp de 24 bits de profundidad (Red, Green, Blue)
+bool isBMPx24(FILE *ptrFile){
+    uint8_t signature[] = {0x42, 0x4d};
+    fseek(ptrFile, 0, SEEK_SET);
+    char tmpCharacter;
+
+    //Comprobacion de firma BM
+    for (int j = 0; j < 2; j++){
+        if ((tmpCharacter = fgetc(ptrFile)) != signature[j]){
+            return false;
+        }
+    }
+
+    //Comprobacion de integridad de tamaño
+
+    if (BMPSize(ptrFile) == -1){
+        return false;
+        //lo que dice ftell sobre el tamaño del archivo no coincide con los datos otorgados en la estructura hexadecimal
+    }
+    return true;
+}
+
+int BMPSize(FILE *ptrFile){
+
+    //Comprobación
+    fseek(ptrFile, 0, SEEK_END);
+    uint64_t file_size_ftell = ftell(ptrFile);
+
+    fseek(ptrFile, 2, SEEK_SET);
+    uint8_t FileSizeSignature[4];
+    for (int j = 0; j < 4; j++){
+        FileSizeSignature[j] = fgetc(ptrFile);
+    }
+
+    //Se usan operadores de desplazamiento de bits para acomodar el conjunto de hexadecimales en una sola variable
+    uint32_t SizeInHex = 0x0; //OBLIGATORIO INICIALIZAR POR POSIBILIDAD DE VALORES BASURA
+    for (int j = 0; j < 4; j++){
+        SizeInHex = (FileSizeSignature[j]<<(8*j)) | SizeInHex;
+    }
+
+    //Comprobación de veracidad ftell y datos hexadecimales para el tamaño del archivo
+    if (file_size_ftell == SizeInHex){
+        return SizeInHex;
+    }else{
+        return -1; //Caso incoherencia
+    }
+}
+
 
 //OFFICE
 /*Los archivos OpenOffice tienen un patrones similares hexadecimales que lo utilizamos como indicador de tipo de archivo, por ende es posible
@@ -142,6 +195,8 @@ char* getFileType(FILE *ptrFile){
 
     }else if(isPNG(ptrFile)){
         return "png";
+    }else if(isBMPx24(ptrFile){
+        return "bmpx24"
     }else{
         return "unclassified file";
     }
