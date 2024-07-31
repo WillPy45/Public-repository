@@ -67,11 +67,11 @@ bool isPDF(FILE *ptrFile){
 bool isBMPx24(FILE *ptrFile){
     uint8_t signature[] = {0x42, 0x4d};
     fseek(ptrFile, 0, SEEK_SET);
-    char tmpCharacter;
+    
 
     //Comprobacion de firma BM
     for (int j = 0; j < 2; j++){
-        if ((tmpCharacter = fgetc(ptrFile)) != signature[j]){
+        if (fgetc(ptrFile) != signature[j]){
             return false;
         }
     }
