@@ -2,7 +2,8 @@
 #include <stdint.h> //Tipos de datos enteros de diferentes tamaños, uint8_t = 1 byte
 #include <stdio.h> 
 #include <string.h> //Manejo de cadenas
-//Versión básica.
+//Versión básica (Modificación constante)
+
 //Entrada por línea de comando esperado: ./GetFileType [direccion/nombre del archivo]
 //Ejemplo de uso: ./GetFileType /workspaces/Public-repository/README.md
 
@@ -11,7 +12,9 @@
 bool isPDF(FILE *ptrFile); 
 bool isPNG(FILE *ptrFile);
 
-//Archivo de imágenes .bmp
+/*Archivo de imágenes .bmp
+Se verifica los dos primeros byte (0 y 1)s para saber si forman la firma BM y luego se saca el tamaño del archivos recorriendo cada
+byte y se saca otro tamaño desde los datos otorgados por la estructura del archivo que comprende de 4 bytes (byte 2 - 5)*/
 bool isBMPx24(FILE *ptrFile);
 int BMPSize(FILE *ptrFile);
 //
@@ -65,13 +68,12 @@ bool isPDF(FILE *ptrFile){
 
 //Archivo .bmp de 24 bits de profundidad (Red, Green, Blue)
 bool isBMPx24(FILE *ptrFile){
-    uint8_t signature[] = {0x42, 0x4d};
     fseek(ptrFile, 0, SEEK_SET);
-    char tmpCharacter;
-
+    uint8_t signature[] = {0x42, 0x4d};
+    
     //Comprobacion de firma BM
     for (int j = 0; j < 2; j++){
-        if ((tmpCharacter = fgetc(ptrFile)) != signature[j]){
+        if (fgetc(ptrFile) != signature[j]){
             return false;
         }
     }
@@ -91,14 +93,12 @@ int BMPSize(FILE *ptrFile){
     fseek(ptrFile, 0, SEEK_END);
     uint64_t file_size_ftell = ftell(ptrFile);
 
-    fseek(ptrFile, 2, SEEK_SET);
     uint8_t FileSizeSignature[4];
-    for (int j = 0; j < 4; j++){
-        FileSizeSignature[j] = fgetc(ptrFile);
-    }
-
+    fseek(ptrFile, 2, SEEK_SET);
+    fread(FileSizeSignature, 1, 4, ptrFile);
+    
     //Se usan operadores de desplazamiento de bits para acomodar el conjunto de hexadecimales en una sola variable
-    uint32_t SizeInHex = 0x0; //OBLIGATORIO INICIALIZAR POR POSIBILIDAD DE VALORES BASURA
+    uint32_t SizeInHex = 0x0; 
     for (int j = 0; j < 4; j++){
         SizeInHex = (FileSizeSignature[j]<<(8*j)) | SizeInHex;
     }
@@ -195,8 +195,8 @@ char* getFileType(FILE *ptrFile){
 
     }else if(isPNG(ptrFile)){
         return "png";
-    }else if(isBMPx24(ptrFile){
-        return "bmpx24"
+    }else if(isBMPx24(ptrFile)){
+        return "bmpx24";
     }else{
         return "unclassified file";
     }
