@@ -162,13 +162,12 @@ char* GetOfficeType(FILE *ptrFile){
 
     Get_mimetype(mimetype, 60, ptrFile);
 
-    printf("mimetype: %s\n", mimetype);
     if (strcmp(mimetype, "mimetypeapplication/vnd.oasis.opendocument.text") == 0){
         return "odt";
     }else if(strcmp(mimetype, "mimetypeapplication/vnd.oasis.opendocument.spreadsheet") == 0){
         return "ods";
     }else{
-        return "error";
+        return "no clasificado o error";
     }
 }
 
@@ -224,4 +223,5 @@ char* getFileType(FILE *ptrFile){
         return "unclassified file";
     }
 }
+
 
