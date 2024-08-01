@@ -2,7 +2,7 @@
 ## Descripción
 GetFileType es un programa de tipo terminal (Command Line Argument) en donde con una dirección del archivo se puede determinar el tipo de archivo. El mismo se vale de los datos hexadecimales que se encuentran dentro de cada archivo.
 ## Uso
-- Teniendo el programa compilado, debes abrir una terminal como por ejemplo la terminal integrada de Visual Code Studio.
+- Teniendo el programa compilado, debes abrir una terminal como por ejemplo la terminal integrada de Visual Studio Code.
 - Debes escribir el comando ./GetFileType.exe y una dirección al archivo que se desea obtener su tipo.
 ```bash
 ./GetFileType [ruta/nombre_del_archivo]
