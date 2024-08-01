@@ -1,6 +1,6 @@
 #include <stdint.h> //Tipos de datos enteros de diferentes tamaños, uint8_t = 1 byte
 #include <stdio.h> 
-#include <string.h> //Manejo de cadenas
+#include <string.h> 
 #include <stdlib.h>
 #include <stdbool.h>
 //Versión básica (Modificación constante)
