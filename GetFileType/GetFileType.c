@@ -1,7 +1,8 @@
-#include <cs50.h> //Libreria Open Source otorgado por la Universidad de Harvard
+#include "cs50.h" //Libreria Open Source otorgado por la Universidad de Harvard
 #include <stdint.h> //Tipos de datos enteros de diferentes tamaños, uint8_t = 1 byte
 #include <stdio.h> 
 #include <string.h> //Manejo de cadenas
+#include <stdlib.h>
 //Versión básica (Modificación constante)
 
 //Entrada por línea de comando esperado: ./GetFileType [direccion/nombre del archivo]
@@ -29,15 +30,30 @@ char* getFileType(FILE *ptrFile);
 
 int main(int argc, char *argv[])
 { // argv[1]: filename
-    if (argc != 2){
+    //for (int j = 1; j < argc: j++)
+    if (argc < 2){
         printf("Formato: ./GetFileType [direccion/nombre del archivo]\n");
         return 1;
     }
 
-    FILE *ptrFile = fopen(argv[1], "r");
+    char *filename = malloc((strlen((argv[1]))+1)*sizeof(char));
+    strcpy(filename, argv[1]);
+    
+    if (argc > 2){
+        for (int i = 2; i < argc; i++)
+        {
+            filename = realloc(filename, sizeof(char)*(strlen(filename) + (strlen(argv[i])+1) + 1));
+            strcat(filename, " ");
+            strcat(filename, argv[i]);
+        }
+        
+    }
+
+
+    FILE *ptrFile = fopen(filename, "r");
 
     if (ptrFile == NULL){
-        printf("-- No se ha podido encontrar el archivo %s\n", argv[1]);
+        printf("-- No se ha podido encontrar el archivo %s\n", filename);
         return 2;
     }
 
@@ -137,9 +153,16 @@ bool isOfficeFile(FILE *ptrFile){
 }
 
 char* GetOfficeType(FILE *ptrFile){
-    char mimetype[250];
-    Get_mimetype(mimetype, 250, ptrFile);
+    char mimetype[60];
 
+    //Inicializacion con caracter nulo, no se desea valores basura
+    for (int i = 0; i < 60; i++){
+        mimetype[i] = 0;
+    }
+
+    Get_mimetype(mimetype, 60, ptrFile);
+
+    printf("mimetype: %s\n", mimetype);
     if (strcmp(mimetype, "mimetypeapplication/vnd.oasis.opendocument.text") == 0){
         return "odt";
     }else if(strcmp(mimetype, "mimetypeapplication/vnd.oasis.opendocument.spreadsheet") == 0){
@@ -201,3 +224,4 @@ char* getFileType(FILE *ptrFile){
         return "unclassified file";
     }
 }
+
