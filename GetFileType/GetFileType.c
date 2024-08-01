@@ -1,8 +1,8 @@
-#include "cs50.h" //Libreria Open Source otorgado por la Universidad de Harvard
 #include <stdint.h> //Tipos de datos enteros de diferentes tamaños, uint8_t = 1 byte
 #include <stdio.h> 
 #include <string.h> //Manejo de cadenas
 #include <stdlib.h>
+#include <stdbool.h>
 //Versión básica (Modificación constante)
 
 //Entrada por línea de comando esperado: ./GetFileType [direccion/nombre del archivo]
@@ -46,9 +46,7 @@ int main(int argc, char *argv[])
             strcat(filename, " ");
             strcat(filename, argv[i]);
         }
-        
     }
-
 
     FILE *ptrFile = fopen(filename, "r");
 
@@ -64,6 +62,7 @@ int main(int argc, char *argv[])
     else{
         printf(".::Error::. %s\n", FileType);
     }
+    free(filename);
     fclose(ptrFile);
     return 0;
 }
@@ -223,5 +222,6 @@ char* getFileType(FILE *ptrFile){
         return "unclassified file";
     }
 }
+
 
 
