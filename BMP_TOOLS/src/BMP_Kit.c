@@ -293,28 +293,6 @@ void RGBtoGrayscale(RGB** Array, uint32_t rows, uint32_t columns){
         
     } 
 }
-/*
-void RGB_Reflect(RGB** Array, uint32_t rows, uint32_t columns){
-    uint8_t tmpValue;
-    for (uint32_t j = 0; j < rows; j++)
-    {
-        for (uint32_t k = 0; k < columns; k++)
-        {
-            tmpValue = Array[j][columns-1-k].blueIntensity;
-            Array[j][k].blueIntensity = tmpValue;
-
-            tmpValue = Array[j][columns-1-k].greenIntensity;
-            Array[j][k].greenIntensity = tmpValue;
-
-            tmpValue = Array[j][columns-1-k].redIntensity;
-            Array[j][k].redIntensity = tmpValue;
-            
-        }
-        
-    }
-    
-}*/
-
 
 void RGB_Reflect(RGB** Array, uint32_t rows, uint32_t columns){
     uint8_t tmpValue;
