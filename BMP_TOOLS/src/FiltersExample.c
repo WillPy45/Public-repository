@@ -56,9 +56,11 @@ int main(int argc, char** argv)
         RGBtoGrayscale(filterFile.resolution, filterFile.rowSize, filterFile.columnSize);
         printf("Operacion completada\n");
     }
-    else if (strcmp(filterOption, "--") == 0)
+    else if (strcmp(filterOption, "reflect") == 0)
     {
-        printf("En proceso\n");
+        printf("Aplicado reflect filter...\n");
+        RGB_Reflect(filterFile.resolution, filterFile.rowSize, filterFile.columnSize);
+        printf("Operacion completada\n");
     }
     else if (strcmp(filterOption, "--") == 0)
     {
@@ -68,6 +70,7 @@ int main(int argc, char** argv)
         printf("Uso: ./FiltersExampleExec [Tipo de filtro] [nombre del archivo]\n");
         printf("Ejemplo: ./FiltersExampleExec grayscale FHD.bmp\n");
 
+        printf("Tipos de filtros disponibles: grayscale, reflect.\n");
         fclose(filterFile.ptrfile);
         freeResolution(&filterFile.resolution, filterFile.rowSize);
 

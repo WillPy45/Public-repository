@@ -65,4 +65,6 @@ void ColorModifier(RGB** Array, uint32_t row, uint32_t column, uint8_t blue, uin
 
 //Filtros
 void RGBtoGrayscale(RGB** Array, uint32_t rows, uint32_t columns);
+
+void RGB_Reflect(RGB** Array, uint32_t rows, uint32_t columns);
 #endif // BMP_KIT_H
