@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdbool.h>
 
+//
 //Funciones
 int resolutionCreate(RGB*** ptrpixelArray, uint32_t row, uint32_t column){ 
     
