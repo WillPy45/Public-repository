@@ -7,39 +7,47 @@ El mismo modifica un archivo partiendo del archivo fuente y crea un archivo nuev
   
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/images/yard.bmp)
 
-- Escala de grises (-g): Ejecutando con ./filter -g archivoFuente.bmp archivoSalida.bmp modifica la imágen a una escala de grises, esto iterando cada pixel y haciendo una sumatoria de sus diferentes canales de colores (Red, Green, y Blue) y dividiendo por 3
---> BYTE grayscaleValue = round((image[j][k].rgbtBlue + image[j][k].rgbtGreen + image[j][k].rgbtRed) / 3.0);
+- Escala de grises (-g): Ejecutando con ./filter -g archivoFuente.bmp archivoSalida.bmp modifica la imágen a una escala de grises
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_grayscale.bmp)
 
 
-- Reflejar (-r):
+- Reflejar (-r): Ejecutando con ./filter -r archivoFuente.bmp archivoSalida.bmp modifica la imágen reflejando el mismo.
+
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_reflect.bmp)
 
-- Desenfoque/blur (-b):
+- Desenfoque/blur (-b):  Ejecutando con ./filter -r archivoFuente.bmp archivoSalida.bmp modifica la imágen con el desenfoque de caja.
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_blur.bmp)
 
 
-- Detección de bordes (-e):
+- Detección de bordes (-e): Ejecutando con ./filter -r archivoFuente.bmp archivoSalida.bm retorna una imágen en donde los bordes se encuentren resaltados. EL mismo utiliza el Operador Sobel.
   
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_edges.bmp)
 
-- Deteccion de bordes y representacion en dos colores dependiendo del Umbral designado:
+- Deteccion de bordes y representacion en dos colores dependiendo del Umbral designado: Ejecutando con ./filter -z archivoFuente.bmp archivoSalida.bmp retorna una imágen con los bordes resaltados en el color blanco y el resto en color negro. El Umbral es la mínima intensidad de la magnitud de un pixel para considerarlo borde, por lo cual el mismo adquiere el color blanco (0xffffff)
 
+**Umbral 10**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral10.bmp)
 
+**Umbral 20**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral20.bmp)
 
+**Umbral 30**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral30.bmp)
 
+**Umbral 50**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral50.bmp)
 
+**Umbral 100**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral100.bmp)
 
+**Umbral 150**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral150.bmp)
 
+**Umbral 200**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral200.bmp)
 
+**Umbral 250**
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral255.bmp)
