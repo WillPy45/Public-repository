@@ -15,6 +15,8 @@ El mismo modifica un archivo partiendo del archivo fuente y crea un archivo nuev
 
 - Reflejar (-r):
 
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_reflect.bmp)
+
 - Desenfoque/blur (-b):
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_blur.bmp)
