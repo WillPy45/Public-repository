@@ -23,6 +23,22 @@ El mismo modifica un archivo partiendo del archivo fuente y crea un archivo nuev
 
 
 - Detección de bordes (-e):
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_edges.bmp)
 
 - Deteccion de bordes y representacion en valor binario (0 y 255):
 
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral10.bmp)
+
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral20.bmp)
+
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral30.bmp)
+
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral50.bmp)
+
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral100.bmp)
+
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral150.bmp)
+
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral200.bmp)
+
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral255.bmp)
