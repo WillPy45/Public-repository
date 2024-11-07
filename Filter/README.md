@@ -3,7 +3,7 @@ El siguiente programa filter.c es un programa que aplica filtros a imágenes .bm
 Teniendo el programa compilado, ejecutalo con ./filter -[opcion de filtro] [ruta del archivo fuente] [nombre del archivo destino]
 
 El mismo modifica un archivo partiendo del archivo fuente y crea un archivo nuevo, se cuenta con 5 filtros, estos serían.
-- Imágen original:
+- **Imágen original:**
   
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/images/yard.bmp)
 
