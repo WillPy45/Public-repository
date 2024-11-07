@@ -6,7 +6,7 @@ El mismo modifica un archivo partiendo del archivo fuente y crea un archivo nuev
 - Escala de grises (-g): Ejecutando con ./filter -g archivoFuente.bmp archivoSalida.bmp modifica la imágen a una escala de grises, esto iterando cada pixel y haciendo una sumatoria de sus diferentes canales de colores (Red, Green, y Blue) y dividiendo por 3
 --> BYTE grayscaleValue = round((image[j][k].rgbtBlue + image[j][k].rgbtGreen + image[j][k].rgbtRed) / 3.0);
 
-![Example](https://github.com/WillPy45/Public-repository/blob/main/Caesar/ExampleCaesar.PNG)
+![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_grayscale.bmp)
 
 
 - Reflejar (-r): 
