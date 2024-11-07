@@ -28,31 +28,31 @@ El mismo modifica un archivo partiendo del archivo fuente y crea un archivo nuev
 
 - Deteccion de bordes y representacion en dos colores dependiendo del Umbral designado: Ejecutando con ./filter -z archivoFuente.bmp archivoSalida.bmp retorna una imágen con los bordes resaltados en el color blanco y el resto en color negro. El Umbral es la mínima intensidad de la magnitud de un pixel para considerarlo borde, por lo cual el mismo adquiere el color blanco (0xffffff)
 
-**Umbral 10**
+- **Umbral 10**
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral10.bmp)
 
-**Umbral 20**
+- **Umbral 20**
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral20.bmp)
 
-**Umbral 30**
+- **Umbral 30**
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral30.bmp)
 
-**Umbral 50**
+- **Umbral 50**
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral50.bmp)
 
-**Umbral 100**
+- **Umbral 100**
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral100.bmp)
 
-**Umbral 150**
+- **Umbral 150**
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral150.bmp)
 
-**Umbral 200**
+- **Umbral 200**
 
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_binaryEdge_Umbral200.bmp)
 
