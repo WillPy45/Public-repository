@@ -26,7 +26,7 @@ El mismo modifica un archivo partiendo del archivo fuente y crea un archivo nuev
   
 ![Example](https://github.com/WillPy45/Public-repository/blob/main/Filter/Imagenes_de_Salida/yard_edges.bmp)
 
-- Deteccion de bordes y representacion en dos colores dependiendo del Umbral designado: Ejecutando con ./filter -z archivoFuente.bmp archivoSalida.bmp retorna una imágen con los bordes resaltados en el color blanco y el resto en color negro. El Umbral es la mínima intensidad de la magnitud de un pixel para considerarlo borde, por lo cual el mismo adquiere el color blanco (0xffffff)
+- **Deteccion de bordes y representacion en dos colores dependiendo del Umbral designado:** Ejecutando con ./filter -z archivoFuente.bmp archivoSalida.bmp retorna una imágen con los bordes resaltados en el color blanco y el resto en color negro. El Umbral es la mínima intensidad de la magnitud de un pixel para considerarlo borde, por lo cual el mismo adquiere el color blanco (0xffffff)
 
 - **Umbral 10**
 
