@@ -56,7 +56,7 @@ def main():
             break
 
 
-    print(suspect_name)
+    print(f"Suspect is {suspect_name}")
     return
 
 
